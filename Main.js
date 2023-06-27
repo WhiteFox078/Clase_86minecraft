@@ -47,15 +47,15 @@ altobloque=30;
 function new_image(imagen)
 {
 	fabric.Image.fromURL(imagen, function(Img) {
-        block_image_object = Img;
+        objetobloque = Img;
 
-        block_image_object.scaleToWidth(anchobloque);
-        block_image_object.scaleToHeight(altobloque);
-        block_image_object.set({
+        objetobloque.scaleToWidth(anchobloque);
+        objetobloque.scaleToHeight(altobloque);
+		objetobloque.set({
 	top:jugadory,
 	left:jugadorx
 	});
-	canvas.add(block_image_object);
+        canvas.add(objetobloque);
 
 	});
 
@@ -63,15 +63,15 @@ function new_image(imagen)
 function player_update()
 {
 	fabric.Image.fromURL("player.png", function(Img) {
-	player_object = Img;
+		objetojugador = Img;
 
-	player_object.scaleToWidth(150);
-	player_object.scaleToHeight(140);
-	player_object.set({
+		objetojugador.scaleToWidth(150);
+		objetojugador.scaleToHeight(140);
+		objetojugador.set({
 	top:jugadory,
 	left:jugadorx
 	});
-	canvas.add(player_object);
+	canvas.add(objetojugador);
 
 	});
 }
@@ -174,7 +174,7 @@ function arriba()
 		jugadory = jugadory - altobloque;
 		console.log("altura del bloque = " + altobloque);
 		console.log("Cuando se presiona la flecha hacia arriba, X =  " + jugadorx + " , Y = "+juegadory);
-		canvas.remove(player_object);
+		canvas.remove(objetojugador);
 		player_update();
 	}
 }
@@ -186,7 +186,7 @@ function abajo()
 		jugadory = jugadory + altobloque;
 		console.log("altura del bloque = " + altobloque);
 		console.log("Cuando se presiona la flecha hacia abajo, X =  " + jugadorx + " , Y = "+jugadory);
-		canvas.remove(player_object);
+		canvas.remove(objetojugador);
 		player_update();
 	}
 }
@@ -198,7 +198,7 @@ function izquierda()
 		jugadorx = jugadorx - anchobloque;
 		console.log("ancho del bloque = " + anchobloque);
 		console.log("Cuando se presiona la flecha izquierda, X =  " + jugadorx + " , Y = "+jugadory);
-		canvas.remove(player_object);
+		canvas.remove(objetojugador);
 		player_update();
 	}
 }
@@ -210,7 +210,7 @@ function derecha()
 		jugadorx = jugadorx + anchobloque;
 		console.log("ancho del bloque = " + anchobloque);
 		console.log("Cuando se presiona la flecha derecha, X =  " + jugadorx + " , Y = ")(jugadory);
-		canvas.remove(player_object);
+		canvas.remove(pobjetojugador);
 		player_update();
 	}
 }
